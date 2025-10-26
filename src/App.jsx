@@ -1,28 +1,39 @@
-import { useState } from 'react'
+import HeroSection from './components/HeroSection';
+import StudioAndApproach from './components/StudioAndApproach';
+import ProjectsGallery from './components/ProjectsGallery';
+import TestimonialsAndContact from './components/TestimonialsAndContact';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-[#FAF7F2] text-[#2B2B2B] antialiased">
+      <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[#FAF7F2]/70 bg-[#FAF7F2]/90 border-b border-neutral-300/40">
+        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+          <a href="#hero" className="font-semibold tracking-wide text-[15px]">Atelier Lumen</a>
+          <nav className="hidden md:flex items-center gap-8 text-sm">
+            <a href="#studio" className="hover:opacity-70 transition-opacity">Studio</a>
+            <a href="#projects" className="hover:opacity-70 transition-opacity">Projects</a>
+            <a href="#approach" className="hover:opacity-70 transition-opacity">Approach</a>
+            <a href="#testimonials" className="hover:opacity-70 transition-opacity">Clients</a>
+            <a href="#contact" className="hover:opacity-70 transition-opacity">Contact</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main className="pt-20">
+        <HeroSection />
+        <StudioAndApproach />
+        <ProjectsGallery />
+        <TestimonialsAndContact />
+      </main>
+
+      <footer className="border-t border-neutral-300/40 mt-24">
+        <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-600">
+          <span>© {new Date().getFullYear()} Atelier Lumen. All rights reserved.</span>
+          <span className="opacity-70">Crafted with intention.</span>
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
